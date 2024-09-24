@@ -58,7 +58,7 @@ class AboutInheritance(Koan):
 
     def test_subclasses_can_invoke_parent_behavior_via_super(self):
         ralph = self.BullDog("Ralph")
-        self.assertEqual(__, ralph.bark())
+        self.assertEqual("WOOF, GRR", ralph.bark())
 
     # ------------------------------------------------------------------
 
@@ -68,7 +68,7 @@ class AboutInheritance(Koan):
 
     def test_super_works_across_methods(self):
         george = self.GreatDane("George")
-        self.assertEqual(__, george.growl())
+        self.assertEqual("WOOF, GROWL", george.growl())
 
     # ---------------------------------------------------------
 
@@ -82,8 +82,8 @@ class AboutInheritance(Koan):
 
     def test_base_init_does_not_get_called_automatically(self):
         snoopy = self.Pug("Snoopy")
-        with self.assertRaises(___): name = snoopy.name
+        with self.assertRaises(AttributeError): name = snoopy.name
 
     def test_base_init_has_to_be_called_explicitly(self):
         boxer = self.Greyhound("Boxer")
-        self.assertEqual(__, boxer.name)
+        self.assertEqual("Boxer", boxer.name)
